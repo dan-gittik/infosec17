@@ -5,7 +5,7 @@ int main(int argc, char* argv[])
 {
     int input, output;
 
-    if (argc != 2) {
+    if (argc < 2) {
         printf("USAGE: %s <number>\n", argv[0]);
         return -1;
     }

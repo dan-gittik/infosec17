@@ -5,5 +5,5 @@ usage: a
 	./a 1
 
 a: a.c
-	# -masm=intel makes GCC accept intel syntax Assembly.
+	# -masm=intel makes GCC accept Intel syntax Assembly.
 	gcc -masm=intel a.c -o a
