@@ -1,9 +1,13 @@
 import os
+import sys
 
 
 def main():
+    if len(sys.argv) != 2:
+        print('USAGE: %s <path>' % sys.argv[0])
+        return
     # First, let's read the file.
-    path = 'a'
+    path = sys.argv[1]
     with open(path, 'rb') as reader:
         data = reader.read()
     # In Python, strings are immutable, so let's "cast" it into a bytearray.
@@ -17,9 +21,6 @@ def main():
     path += '.patched'
     with open(path, 'wb') as writer:
         writer.write(data)
-    # Make it executable and run it. Impossible!
-    os.chmod(path, 0o777)
-    os.execl(path, path)
 
 
 if __name__ == '__main__':
